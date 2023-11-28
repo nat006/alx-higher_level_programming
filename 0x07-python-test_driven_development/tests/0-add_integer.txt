@@ -1,0 +1,137 @@
+# 0-add_integer.txt
+
+Usage of the `add_integer` function
+===================================
+
+The `add_integer` function in this module is used to perform addition of two integers.
+
+Syntax
+------
+```python
+add_integer(a, b=98)
+```
+
+Description
+-----------
+The `add_integer` function takes two arguments `a` and `b`, and returns the sum of the integers. If `b` is not provided, it defaults to 98.
+
+Examples
+--------
+
+Example 1:
+```python
+>>> add_integer(2, 3)
+5
+```
+
+Example 2:
+```python
+>>> add_integer(2, -3)
+-1
+```
+
+Example 3:
+```python
+>>> add_integer(2.0, 3.0)
+5
+```
+
+Note: Float values are casted to integers before the addition is performed.
+
+Example 4:
+```python
+>>> add_integer(2.9, 0.2)
+2
+```
+
+Example 5:
+```python
+>>> add_integer(-2.9, -0.2)
+-2
+```
+
+Example 6:
+```python
+>>> add_integer(2.3, -3)
+-1
+```
+
+Example 7:
+```python
+>>> add_integer(2)
+100
+```
+
+Note: If `b` is not provided, it defaults to 98.
+
+Error Handling
+--------------
+
+In case of invalid inputs, the `add_integer` function raises appropriate errors.
+
+Example 8:
+```python
+>>> add_integer("hello", 3)
+Traceback (most recent call last):
+  TypeError: a must be an integer
+```
+
+Example 9:
+```python
+>>> add_integer(2, "hello")
+Traceback (most recent call last):
+  TypeError: b must be an integer
+```
+
+Example 10:
+```python
+>>> add_integer(None)
+Traceback (most recent call last):
+  TypeError: a must be an integer
+```
+
+Example 11:
+```python
+>>> add_integer(2.3, None)
+Traceback (most recent call last):
+  TypeError: b must be an integer
+```
+
+Note: The function expects both arguments to be integers or floats.
+
+Example 12:
+```python
+>>> add_integer("hello", "there")
+Traceback (most recent call last):
+  TypeError: a must be an integer
+```
+
+The function also handles special cases such as infinity and NaN (Not a Number).
+
+Example 13:
+```python
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+  OverflowError: cannot convert float infinity to integer
+```
+
+Example 14:
+```python
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+  OverflowError: cannot convert float infinity to integer
+```
+
+Example 15:
+```python
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+  ValueError: cannot convert float NaN to integer
+```
+
+Example 16:
+```python
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+  ValueError: cannot convert float NaN to integer
+```

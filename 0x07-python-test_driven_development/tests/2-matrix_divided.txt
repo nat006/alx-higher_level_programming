@@ -1,0 +1,116 @@
+# 2-matrix_divided.txt
+
+Usage of the `matrix_divided` function
+=====================================
+
+The `matrix_divided` function in this module is used to perform division of all elements in a matrix by a given value.
+
+Syntax
+------
+```python
+matrix_divided(matrix, div)
+```
+
+Description
+-----------
+The `matrix_divided` function takes two arguments `matrix` and `div`, and returns a new matrix that is a copy of the parameter `matrix` with all elements divided by `div`.
+
+Examples
+--------
+
+Example 1:
+```python
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+```
+
+Example 2:
+```python
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+```
+
+Note: The quotients are rounded to a maximum of two decimal places.
+
+Example 3:
+```python
+>>> matrix = [
+...     [1.1, -2.2, 3.3],
+...     [4.4, 5.5, -6.6]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
+```
+
+Example 4:
+```python
+>>> matrix = [
+...     [1, -2.2, 3, 4.4, 5],
+...     [-6.6, 7.00, 8, 9.999, 10]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
+```
+
+Note: The function can handle both integers and floats, and the resulting matrix will maintain the original data type.
+
+Error Handling
+--------------
+
+In case of invalid matrices or divisors, the `matrix_divided` function raises appropriate errors.
+
+Example 5:
+```python
+>>> matrix = "not a list"
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+```
+
+Example 6:
+```python
+>>> matrix = None
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+```
+
+Note: The matrix parameter must be a list of lists.
+
+Example 7:
+```python
+>>> matrix = []
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+```
+
+Example 8:
+```python
+>>> matrix = [[]]
+>>> print(matrix_divided(matrix, 3))
+[[]]
+```
+
+Example 9:
+```python
+>>> matrix = [1, 2, 3]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+```
+
+Example 10:
+```python
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, "not

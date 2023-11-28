@@ -1,0 +1,56 @@
+# 3-say_my_name.txt
+
+===========================
+How to Use 3-say_my_name.py
+===========================
+
+This module contains a function called `say_my_name` that can be used to print a person's name.
+
+Usage
+=====
+
+The `say_my_name` function takes two arguments: `first_name` and `last_name`. It prints "My name is <first_name> <last_name>".
+
+Example usage:
+
+```python
+>>> from say_my_name import say_my_name
+>>> say_my_name("John", "Doe")
+My name is John Doe
+```
+
+If the `last_name` argument is not provided, the function will print an empty string for the last name.
+
+```python
+>>> say_my_name("John")
+My name is John
+```
+
+Invalid Names
+=============
+
+Both the `first_name` and `last_name` arguments must be strings. Otherwise, a `TypeError` will be raised.
+
+Example:
+
+```python
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "say_my_name.py", line 6, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+```
+
+At least one name must be provided when calling the `say_my_name` function. Otherwise, a `TypeError` will be raised.
+
+Example:
+
+```python
+>>> say_my_name()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+```
+
+Please ensure that the `say_my_name` function is imported correctly and used with the appropriate arguments.
