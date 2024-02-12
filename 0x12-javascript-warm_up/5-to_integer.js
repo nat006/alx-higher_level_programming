@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const [, , argument] = process.argv;
 const num = parseInt(argument);
 
