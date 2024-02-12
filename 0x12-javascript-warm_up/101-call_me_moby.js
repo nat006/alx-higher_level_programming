@@ -1,14 +1,7 @@
 #!/usr/bin/node
 
-// executeXTimes function to be visible from outside
-function executeXTimes(x, theFunction) {
-  if (x <= 0) {
-    return;
+exports.callMeMoby = function (x, theFunction) {
+  for (let i = 0; i < x; i++) {
+    theFunction();
   }
-  theFunction();
-  executeXTimes(x - 1, theFunction);
-}
-
-module.exports = {
-  executeXTimes
-}
+};
