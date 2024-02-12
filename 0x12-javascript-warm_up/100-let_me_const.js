@@ -1,14 +1,8 @@
 #!/usr/bin/node
 
-// executeXTimes function to be visible from outside
-function executeXTimes(x, theFunction) {
-  if (x <= 0) {
-    return;
-  }
-  theFunction();
-  executeXTimes(x - 1, theFunction);
-}
+#!/usr/bin/node
 
-module.exports = {
-  executeXTimes
-}
+let myVar = 0;
+myVar = 333;
+
+console.log(myVar);
