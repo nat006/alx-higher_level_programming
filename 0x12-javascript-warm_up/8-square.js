@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const [ , , sizeArg ] = process.argv;
+const [, , sizeArg] = process.argv;
 const size = parseInt(sizeArg);
 
 if (!Number.isNaN(size)) {
@@ -8,5 +8,5 @@ if (!Number.isNaN(size)) {
     console.log('X'.repeat(size));
   }
 } else {
-  console.log("Missing size");
+  console.log('Missing size');
 }

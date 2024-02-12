@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function findSecondLargest(args) {
+function findSecondLargest (args) {
   if (args.length === 0 || args.length === 1) {
     return 0;
   }
@@ -11,6 +11,6 @@ function findSecondLargest(args) {
   return uniqueSortedArgs[1];
 }
 
-const [ , , ...args ] = process.argv;
+const [, , ...args] = process.argv;
 
 console.log(findSecondLargest(args));
