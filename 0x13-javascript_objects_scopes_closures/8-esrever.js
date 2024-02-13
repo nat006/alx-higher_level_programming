@@ -1,6 +1,5 @@
 #!/usr/bin/node
 'use strict';
-
 exports.esrever = function (list) {
   const reversedList = [];
 
