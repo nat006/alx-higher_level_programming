@@ -1,5 +1,5 @@
 #!/usr/bin/node
-'use strict';
+
 
 class Square extends require('./5-square.js') {
   charPrint (c) {
