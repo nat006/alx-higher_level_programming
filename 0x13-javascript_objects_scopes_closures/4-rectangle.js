@@ -1,6 +1,6 @@
 #!/usr/bin/node
 class Rectangle {
-  constructor(w, h) {
+  constructor (w, h) {
     if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
       return {}; // Return an empty object if conditions are met
     }
@@ -8,29 +8,29 @@ class Rectangle {
     this.height = h;
   }
 
-  print() {
+  print () {
     if (this.width === undefined || this.height === undefined) {
-      console.log("Empty Rectangle");
+      console.log('Empty Rectangle');
     } else {
       for (let i = 0; i < this.height; i++) {
-        let row = "";
+        let row = '';
         for (let j = 0; j < this.width; j++) {
-          row += "X";
+          row += 'X';
         }
         console.log(row);
       }
     }
   }
 
-  rotate() {
+  rotate () {
     if (this.width !== undefined && this.height !== undefined) {
-      let temp = this.width;
+      const temp = this.width;
       this.width = this.height;
       this.height = temp;
     }
   }
 
-  double() {
+  double () {
     if (this.width !== undefined && this.height !== undefined) {
       this.width *= 2;
       this.height *= 2;
@@ -42,10 +42,10 @@ class Rectangle {
 const rect = new Rectangle(4, 3);
 rect.print();
 rect.rotate();
-console.log("After rotating:");
+console.log('After rotating:');
 rect.print();
 rect.double();
-console.log("After doubling:");
+console.log('After doubling:');
 rect.print();
 
 module.exports = Rectangle;

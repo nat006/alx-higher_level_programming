@@ -2,7 +2,7 @@
 // semistandard-disable
 
 class Rectangle {
-  constructor(w, h) {
+  constructor (w, h) {
     if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
       return {}; // Return an empty object if conditions are met
     }
@@ -10,14 +10,14 @@ class Rectangle {
     this.height = h;
   }
 
-  print() {
+  print () {
     if (this.width === undefined || this.height === undefined) {
-      console.log("Empty Rectangle");
+      console.log('Empty Rectangle');
     } else {
       for (let i = 0; i < this.height; i++) {
-        let row = "";
+        let row = '';
         for (let j = 0; j < this.width; j++) {
-          row += "X";
+          row += 'X';
         }
         console.log(row);
       }

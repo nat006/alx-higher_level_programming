@@ -2,7 +2,7 @@
 'use strict';
 
 class Square extends require('./5-square.js') {
-  charPrint(c) {
+  charPrint (c) {
     if (c === undefined) {
       c = 'X';
     }
