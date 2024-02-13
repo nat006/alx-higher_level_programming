@@ -1,5 +1,4 @@
 #!/usr/bin/node
-// semistandard-disable
 
 class Rectangle {
   constructor (w, h) {
