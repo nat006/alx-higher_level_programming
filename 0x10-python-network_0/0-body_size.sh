@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash script to send request to URL and display the size of the response body
+# Bash script to send request to URL and display size of the response body
 
 # Check if URL argument is provided
 if [-z "$1"] then
@@ -8,10 +8,11 @@ echo "Usage: $0 <URL>"
 exit 1
 fi
 
-# Send request to URL and store response in a variable
-response = $(curl - sI "$1")
+url = $1
+response = $(curl - sI "$url" | grep - i content-length | awk '{print $2}')
+if [-z "$response"] then
+echo "Error: Could not get the content length of the response"
+exit 1
+fi
 
-# Extract Content-Length header from response
-content_length = $(echo "$response" |
-grep - i "Content-Length" |
-awk '{print $2}')
+echo "Size of the response body: $response bytes"
