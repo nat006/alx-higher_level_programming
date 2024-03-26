@@ -2,25 +2,22 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 
-request.get(apiUrl, (error, response, body) => {
+request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
-  } else {
-    const todos = JSON.parse(body);
+  } else if (response.statusCode === 200) {
     const completedTasksByUser = {};
+    const todos = JSON.parse(body);
 
-    todos.forEach((todo) => {
+    for (const todo of todos) {
       if (todo.completed) {
-        if (completedTasksByUser[todo.userId]) {
-          completedTasksByUser[todo.userId]++;
-        } else {
-          completedTasksByUser[todo.userId] = 1;
-        }
+        const userId = todo.userId;
+        completedTasksByUser[userId] = completedTasksByUser[userId] ? completedTasksByUser[userId] + 1 : 1;
       }
-    });
-
-    for (const userId in completedTasksByUser) {
-      console.log(`User ID ${userId} completed ${completedTasksByUser[userId]} tasks`);
     }
+
+    console.log(completedTasksByUser);
+  } else {
+    console.log(`An error occurred. Status code: ${response.statusCode}`);
   }
 });
