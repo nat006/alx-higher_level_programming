@@ -7,20 +7,13 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-
-        db = MySQLdb.connect(user=username, passwd=password,
-                             db=database, port=3306)
-        cursor = db.cursor()
-        query = "SELECT * FROM cities ORDER BY cities.id"
-        cursor.execute(query)
-        rows = cursor.fetchall()
-
-        for row in rows:
-            print(row)
-
-        cursor.close()
-        db.close()
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cur = db.cursor()
+    cur.execute("""SELECT cities.id, cities.name, states.name FROM
+                cities INNER JOIN states ON states.id=cities.state_id""")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
